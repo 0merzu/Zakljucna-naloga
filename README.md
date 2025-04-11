@@ -61,3 +61,30 @@ Ko bo število prijavljenih obiskovalcev preseglo zmogljivost posameznih lokacij
 - Trenutno platforma še ni razširjena  
 - Na začetku bo verjetno težko pridobiti dovolj gostiteljev, ki bodo pripravljeni predstaviti svoj avtomobil
 
+---
+
+### SWOT analiza
+
+#### **PREDNOSTI (Strengths)**  
+- Prva platforma, namenjena organizaciji carmeet-ov  
+- Pregledna predstavitev udeležencev in njihovih vozil  
+- Možnost ogleda specifikacij vozil pred dogodkom  
+- Večja dostopnost dogodkov za širšo avtomobilsko skupnost
+
+#### **SLABOSTI (Weaknesses)**  
+- Platforma še ni razširjena  
+- Sprva težko pridobiti dovolj gostiteljev  
+- Odvisnost od družbenih omrežij za promocijo  
+- Brez začetnega prihodka (brezplačna uporaba na začetku)
+
+#### **PRILOŽNOSTI (Opportunities)**  
+- Povečana priljubljenost carmeet-ov in avtomobilskih skupnosti  
+- Pomanjkanje primerljivih platform (ni konkurence)  
+- Sodelovanje z avtomobilskimi klubi in delavnicami  
+- Monetizacija skozi vstopnine in “ride-along” opcijo
+
+#### **GROŽNJE (Threats)**  
+- Možne kopije koncepta s strani večjih platform  
+- Omejena uporabniška baza v začetku  
+- Težave z logistiko večjih dogodkov (zmogljivost lokacij)  
+- Pravna vprašanja v zvezi z odgovornostjo na dogodkih
