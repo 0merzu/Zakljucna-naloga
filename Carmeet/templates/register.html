@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <title>Registracija - Carmeet</title>
+  <style>
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: url('/static/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+
+  
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      max-width: 400px;
+      margin: 5vh auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+  
+    form h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+  
+    .role-selection {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+  
+    .role-selection label {
+      flex: 1;
+      background-color: #f3f4f6;
+      padding: 0.75rem;
+      border-radius: 0.5rem;
+      border: 2px solid transparent;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+  
+    .role-selection input[type="radio"] {
+      display: none;
+    }
+  
+    .role-selection input[type="radio"]:checked + span {
+      background-color: #3b82f6;
+      color: white;
+      border-color: #2563eb;
+    }
+  
+    .role-selection span {
+      display: block;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+  
+    button[type="submit"] {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #3b82f6;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+  
+    button[type="submit"]:hover {
+      background-color: #2563eb;
+    }
+  </style>
+  
+</head>
+<body>
+  <form method="POST">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="flash">
+        {% for category, message in messages %}
+          <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+    <h2>Registracija</h2>
+    <input type="text" name="name" placeholder="Ime" required>
+    <input type="text" name="surname" placeholder="Priimek" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Geslo" required>
+    <label>
+      <input type="radio" name="role" value="guest" required> Gost
+    </label>
+    <label>
+      <input type="radio" name="role" value="host" required> Gostitelj
+    </label>
+  
+    <br><br>
+
+
+    <button type="submit">Registriraj se</button>
+  </form>
+</body>
+</html>
