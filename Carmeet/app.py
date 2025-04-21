@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, session
 from tinydb import TinyDB, Query
 
-app = Flask(__name__, static_folder='static')
+app = Flask(__name__)
 app.secret_key = 'carmeet_secret'
 
 db = TinyDB('db.json')
