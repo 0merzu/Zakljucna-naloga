@@ -22,11 +22,9 @@ def register():
         role = request.form['role']
 
         if db.search(User.email == email):
-            flash('Email already registered.', 'error')
             return redirect('/login')
 
         db.insert({'name': name, 'surname': surname , 'email': email, 'password': password, 'role': role})
-        flash('Successfully registered!', 'success')
         return redirect('/login')
 
     return render_template('register.html')
