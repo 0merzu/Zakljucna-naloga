@@ -123,15 +123,6 @@ body::before {
 </head>
 <body>
   <form method="POST">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="flash">
-        {% for category, message in messages %}
-          <p>{{ message }}</p>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endwith %}
     <h2>Registracija</h2>
     <input type="text" name="name" placeholder="Ime" required>
     <input type="text" name="surname" placeholder="Priimek" required>
