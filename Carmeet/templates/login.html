@@ -113,15 +113,6 @@ body::before {
 
 
   <form method="POST">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-    {% if messages %}
-      <div class="flash">
-        {% for category, message in messages %}
-          <p>{{ message }}</p>
-        {% endfor %}
-      </div>
-    {% endif %}
-  {% endwith %}
     <h2>Prijava</h2>
     <input type="email" name="email" placeholder="Email" required>
     <input type="password" name="password" placeholder="Geslo" required>
