@@ -29,6 +29,36 @@ def register():
 
     return render_template('register.html')
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email'].strip()
+        
+        session['email'] = email
+        password = request.form['password']
+
+        user = db.get(User.email == email)
+
+        host_count = len(db.search(User.role == 'host'))
+
+        if user and user['password'] == password and user['role'] == 'host' and host_count >= 5:
+            flash(f'Prijava uspešna! Pozdravljen, {user["name"]}.', 'success')
+            return redirect('/host_dashboard')
+        
+        if user and user['password'] == password and user['role'] == 'host' and host_count <= 5:
+            flash(f'Prijava uspešna! Pozdravljen, {user["name"]}.', 'success')
+            return redirect('/vote_dashboard')
+        
+        if user and user['password'] == password and user['role'] == 'guest':
+            flash(f'Prijava uspešna! Pozdravljen, {user["name"]}.', 'success')
+            return redirect('/guest_dashboard')
+        
+        
+        else:
+            return redirect('/login')
+
+    return render_template('login.html')
+
 
 
 if __name__ == '__main__':
