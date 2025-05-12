@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+</head>
+<style>
+   html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: auto;
+  min-height: 100%;
+}
+
+body {
+  background: url('/static/bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #3b82f6;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1rem;
+}
+
+button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+/* Square Layout for Locations */
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.radio-group label {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  height: 100%;
+}
+
+.radio-group label:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.02);
+}
+
+.radio-group input[type="radio"] {
+  margin-bottom: 0.5rem;
+  accent-color: #3b82f6;
+}
+
+.radio-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-label span {
+  margin-bottom: 0.5rem;
+}
+
+.radio-map {
+  margin-top: 0.5rem;
+}
+
+.page-wrapper {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+
+    
+  </style>
+
+<body>
+  <div class="page-wrapper">
+    <form method="POST">
+      <div class="form-container">
+      <h2>Voting</h2>
+      <div class="radio-group">
+        <label>
+          <input type="radio" name="location" value="location-1" required>
+          <div class="radio-label">
+            <span>Prva lokacija</span>
+            <div class="radio-map">{{ locs['location-1'] | safe }}</div>
+          </div>
+        </label>
+        
+        <label>
+          <input type="radio" name="location" value="location-2" required>
+          <div class="radio-label">
+            <span>Druga lokacija</span>
+            <div class="radio-map">{{ locs['location-2'] | safe }}</div>
+          </div>
+        </label>
+        
+        <label>
+          <input type="radio" name="location" value="location-3" required>
+          <div class="radio-label">
+            <span>Tretja lokacija</span>
+            <div class="radio-map">{{ locs['location-3'] | safe }}</div>
+          </div>
+        </label>
+        
+        <label>
+          <input type="radio" name="location" value="location-4" required>
+          <div class="radio-label">
+            <span>Cetrta lokacija</span>
+            <div class="radio-map">{{ locs['location-4'] | safe }}</div>
+          </div>
+        </label>
+        
+      </div>
+      <button type="submit">Potrdi</button>
+    </div>
+  </form>
+  <div style="
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+">
+  <form action="{{ url_for('logout') }}" method="get">
+    <button type="submit" style="
+      padding: 0.5rem 1rem;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    ">Odjava</button>
+  </form>
+</div>
+
+</body>
+</html>

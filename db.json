@@ -1,0 +1,60 @@
+{
+  "_default": {
+    "1": {
+      "name": "test",
+      "surname": "test",
+      "email": "test@test",
+      "password": "test",
+      "role": "host",
+      "location": "location-1",
+      "IG_handle": "@test",
+      "znamka": "BMW",
+      "model": "M3",
+      "letnik": "2020",
+      "engine": "3.0L I6",
+      "power": "510 HP"
+    },
+    "2": {
+      "name": "Blaž",
+      "surname": "Kovač",
+      "email": "blaz@carmeet.si",
+      "password": "blaz456",
+      "role": "host",
+      "location": "location-2",
+      "IG_handle": "@blaz_kovac",
+      "znamka": "Audi",
+      "model": "RS5",
+      "letnik": "2019",
+      "engine": "2.9L V6",
+      "power": "450 HP"
+    },
+    "3": {
+      "name": "Nina",
+      "surname": "Hribar",
+      "email": "nina@carmeet.si",
+      "password": "nina789",
+      "role": "host",
+      "location": "location-3",
+      "IG_handle": "@nina_hribar",
+      "znamka": "Mercedes",
+      "model": "C63 AMG",
+      "letnik": "2018",
+      "engine": "4.0L V8",
+      "power": "510 HP"
+    },
+    "4": {
+      "name": "Tomaž",
+      "surname": "Lesjak",
+      "email": "tomaz@carmeet.si",
+      "password": "tomaz321",
+      "role": "host",
+      "location": "location-4",
+      "IG_handle": "@tomaz_lesjak",
+      "znamka": "Toyota",
+      "model": "Supra",
+      "letnik": "2021",
+      "engine": "3.0L I6",
+      "power": "340 HP"
+    }
+  }
+}

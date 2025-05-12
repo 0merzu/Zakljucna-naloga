@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Pregled in Reset</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .stats {
+      margin-bottom: 2rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #dc2626;
+    }
+  </style>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+
+  <div class="stats">
+    <p><strong>Število gostiteljev:</strong> {{ host_count }}</p>
+    <p><strong>Število gostov:</strong> {{ guest_count }}</p>
+    <h2>Glasovi po lokacijah</h2>
+    <p>Location-1: {{ location1_count }}</p>
+    <p>Location-2: {{ location2_count }}</p>
+    <p>Location-3: {{ location3_count }}</p>
+    <p>Location-4: {{ location4_count }}</p>
+  </div>
+    <div style="
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+">
+  <form action="{{ url_for('logout') }}" method="get">
+    <button type="submit" style="
+      padding: 0.5rem 1rem;
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+    ">Odjava</button>
+  </form>
+</div>
+
+  <form method="post">
+    <button type="submit">Resetiraj Bazo</button>
+  </form>
+</body>
+</html>
