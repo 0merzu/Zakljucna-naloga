@@ -158,9 +158,7 @@ def final_dashboard():
         m = folium.Map(location=coords, zoom_start=13, width='600px', height='400px')
         folium.Marker(coords, popup=f"Lokacija: {top_location}").add_to(m)
         loc_map = m._repr_html_()
-    else:
-        location_final = "Glasovanje še ni zaključeno"
-        loc_map = "<p>Ni zemljevida</p>"
+
 
  
 
